@@ -28,8 +28,18 @@ public class Postagem {
 	private String titulo;
 	
 	@NotNull
+	private int ano;
+	
+	@NotNull
 	@Size(min=10, max=500)
 	private String texto;
+	
+	/*
+	 * @Column(columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+	@Temporal(TemporalType.TIMESTAMP)
+	@CreationTimestamp
+
+	 */
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data= new java.sql.Date(System.currentTimeMillis());
@@ -76,6 +86,14 @@ public class Postagem {
 
 	public void setTema(Tema tema) {
 		this.tema = tema;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
 	}
 
 	
